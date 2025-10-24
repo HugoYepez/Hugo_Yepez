@@ -2,32 +2,39 @@
 #include <stdlib.h>
 #include <time.h>
 
-int main()
+void Yepez_Pinargote()
 {
-    int Yepez_Pinargote[100];
+    int vector[100];
     int tamano;
 
-    printf("Ingrese la altura  del vector (1 - 100): ");
+    printf("Ingrese la altura del vector (1 - 100): ");
     scanf("%d", &tamano);
 
     if (tamano < 1 || tamano > 100)
     {
         printf("Error: La altura debe estar entre 1 y 100.\n");
-        return 1;
+        return;
     }
 
     srand(time(NULL));
+
     for (int i = 0; i < tamano; i++)
     {
-        Yepez_Pinargote[i] = rand() % 100;
+        vector[i] = rand() % 100;
     }
 
-    printf("\n Resultado del vector:\n");
+    printf("\nResultado del vector Yepez_Pinargote:\n");
     for (int i = 0; i < tamano; i++)
     {
-        printf("%d ", Yepez_Pinargote[i]);
+        printf("%d ", vector[i]);
     }
 
     printf("\n");
+}
+
+int main()
+{
+
+    Yepez_Pinargote();
     return 0;
 }
