@@ -1,11 +1,13 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 int main()
 {
     int Yepez_Pinargote[100];
     int tamano;
 
-    printf("Ingrese la altura del vector (1 - 100): ");
+    printf("Ingrese la altura  del vector (1 - 100): ");
     scanf("%d", &tamano);
 
     if (tamano < 1 || tamano > 100)
@@ -14,14 +16,13 @@ int main()
         return 1;
     }
 
-    printf("Ingrese los %d elementos del vector:\n", tamano);
+    srand(time(NULL));
     for (int i = 0; i < tamano; i++)
     {
-        printf("Elemento [%d]: ", i + 1);
-        scanf("%d", &Yepez_Pinargote[i]);
+        Yepez_Pinargote[i] = rand() % 100;
     }
 
-    printf("\nContenido del vector Yepez_Pinargote:\n");
+    printf("\n Resultado del vector:\n");
     for (int i = 0; i < tamano; i++)
     {
         printf("%d ", Yepez_Pinargote[i]);
